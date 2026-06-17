@@ -53,7 +53,7 @@ export default function EnquiryModal({ isOpen, onClose }) {
     setLoading(true);
 
     try {
-    await axios.post("http://localhost:5000/send-enquiry", form);
+    await axios.post("https://galaxy-871z.onrender.com/send-enquiry", form);
 
     setSuccess(true); // 👈 trigger success UI
 

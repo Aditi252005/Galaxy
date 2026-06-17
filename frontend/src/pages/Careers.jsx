@@ -300,7 +300,7 @@ function CareersForm() {
       formData.append("resume", resume);
 
       const res = await axios.post(
-        "http://localhost:5000/apply",
+        "https://galaxy-871z.onrender.com/apply",
         formData,
         {
           headers: {
