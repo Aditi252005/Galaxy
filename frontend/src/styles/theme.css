@@ -1,0 +1,85 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@200;300;400;500;600&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --sage:          #6fa080;
+  --sage-mid:      #8fb89e;
+  --sage-light:    #b8d4c0;
+  --sage-pale:     #dceee3;
+  --sage-mist:     #eff7f1;
+
+  --teal:          #4e8fa0;
+  --teal-mid:      #78b0bf;
+  --teal-light:    #a8cdd6;
+  --teal-pale:     #d6ecf0;
+  --teal-mist:     #eef7fa;
+
+  --cream:         #f9f7f2;
+  --parchment:     #f2ede4;
+  --stone:         #e5ddd0;
+
+  --charcoal:      #252e28;
+  --ink:           #3a4840;
+  --slate:         #5a6e62;
+  --muted:         #8a9e92;
+
+  --gold:          #c9a96e;
+  --gold-light:    #e2c99a;
+
+  --glass-bg:      rgba(255,255,255,0.22);
+  --glass-border:  rgba(255,255,255,0.42);
+  --glass-shadow:  0 8px 40px rgba(78,143,160,0.10);
+
+  --card-shadow:   0 20px 60px rgba(37,46,40,0.08);
+  --hover-shadow:  0 32px 80px rgba(37,46,40,0.14);
+
+  --font-display:  'Playfair Display', serif;
+  --font-body:     'DM Sans', sans-serif;
+
+  --radius-sm:     4px;
+  --radius-md:     8px;
+  --radius-lg:     16px;
+
+  --transition:    0.35s cubic-bezier(0.23, 1, 0.32, 1);
+
+  --white: #ffffff;
+  --bg: var(--cream);
+  --border: var(--stone);
+
+  --radius: var(--radius-lg);
+
+  --shadow: var(--card-shadow);
+
+  --teal-dark: #3b7481;
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+.cta-band {
+    padding: 6rem 5vw;
+    background: linear-gradient(135deg, var(--charcoal) 0%, #3d4d45 100%);
+    text-align: center;
+  }
+  .cta-band .section-tag { justify-content: center; color: var(--teal-light); }
+  .cta-band .section-tag::before { background: var(--teal-light); }
+  .cta-band .section-title { color: #fff; margin: 0 auto 1rem; }
+  .cta-band .section-desc { color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem; }
+  .cta-band-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }

@@ -1,0 +1,20 @@
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.testi-grid > div {
+  height: 100%;
+}
+
+.testi-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.testi-quote {
+  flex: 1;
+}

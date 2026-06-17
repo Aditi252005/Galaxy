@@ -1,0 +1,137 @@
+.hero {
+  position: relative; width: 100%; height: 100vh;
+  overflow: hidden;
+}
+.hero-slide {
+  position: absolute; inset: 0;
+}
+.hero-img {
+  width: 100%; height: 100%;
+  transform-origin: center;
+  filter: brightness(0.95) saturate(1.05);
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+ 
+     background: linear-gradient(
+    145deg,
+    rgba(37,46,40,0.70) 0%,
+    rgba(78,143,160,0.28) 55%,
+    rgba(37,46,40,0.50) 100%
+  );
+}
+.hero-content {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 0 1.5rem;
+}
+.hero-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.72rem; font-weight: 500;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--teal-light);
+  margin-bottom: 1.1rem;
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5.5vw, 6rem);
+  font-weight: 300; line-height: 1.08;
+  color: #fff; margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+.hero-title em { font-style: italic; font-weight: 400; color: var(--teal-mid); }
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 300; color: rgba(255,255,255,0.82);
+  letter-spacing: 0.06em; margin-bottom: 2.8rem; max-width: 520px;
+}
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+.btn-primary {
+  padding: 0.85rem 2.2rem;
+  background: var(--teal);
+  color: #fff; border: none; cursor: pointer;
+  font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  border-radius: 2px;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary:hover {
+  background: var(--sage); transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(91,155,167,0.35);
+}
+.btn-ghost {
+  padding: 0.85rem 2.2rem;
+  background: transparent;
+  color: #fff; border: 1.5px solid rgba(255,255,255,0.55); cursor: pointer;
+  font-family: var(--font-body); font-size: 0.8rem;
+  font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase;
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.08);
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.18); border-color: rgba(255,255,255,0.9);
+  transform: translateY(-2px);
+}
+.hero-arrows {
+  position: absolute; bottom: 50%; transform: translateY(50%);
+  width: 100%; display: flex; justify-content: space-between;
+  padding: 0 1.5rem; pointer-events: none;
+}
+.hero-arrow {
+  pointer-events: all;
+  width: 46px; height: 46px;
+  background: var(--glass); border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  border-radius: 50%; color: #fff; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.hero-arrow:hover { background: rgba(255,255,255,0.3); transform: scale(1.08); }
+.hero-dots {
+  position: absolute; bottom: 2.2rem; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 0.5rem;
+}
+.hero-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(255,255,255,0.4); border: none; cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.hero-dot.active { background: #fff; transform: scale(1.4); }
+.hero-scroll {
+  position: absolute; bottom: 2rem; right: 5vw;
+  display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+  color: rgba(255,255,255,0.6);
+  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+
+.section { padding: 7rem 5vw; }
+.section-tag {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 0.6rem;
+}
+.section-tag::before { content:''; width: 28px; height: 1px; background: var(--teal); }
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 400; line-height: 1.15;
+  color: var(--charcoal); margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; color: var(--teal); }
+.section-desc {
+  font-size: 0.95rem; font-weight: 300; color: #6b7a72;
+  line-height: 1.8; max-width: 520px;
+}
+
+
+
+
+
