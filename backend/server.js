@@ -88,7 +88,7 @@ app.post("/send-enquiry", async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "contact@galaxywindowandmodulars.com",
       to: "digambarareinforcement@gmail.com", // temporary
       subject: `New Enquiry - ${name}`,
       html: `
@@ -194,17 +194,14 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
   }
 
   // Respond immediately
-  res.status(200).json({
-    success: true,
-    message: "Application received successfully",
-  });
+  
 
   try {
     const pdfBuffer = fs.readFileSync(file.path);
 
     // Email to Galaxy
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "careers@galaxywindowandmodulars.com",
       to: "digambarareinforcement@gmail.com", // Change later
 
       subject: `New Job Application - ${name}`,
@@ -224,12 +221,13 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
           content: pdfBuffer.toString("base64"),
         },
       ],
+
     });
 
     // Auto reply (testing mode)
     await resend.emails.send({
-      from: "onboarding@resend.dev",
-      to: "aditisingh25000@gmail.com",
+      from: "careers@galaxywindowandmodulars.com",
+      to: email,
 
       subject: "Application Received",
 
@@ -257,13 +255,23 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
 
     console.log("Application processed successfully");
 
+    res.status(200).json({
+      success: true,
+      message: "Application received successfully",
+    });
   } catch (err) {
-    console.error("Application error:", err);
+      console.error("Application error:", err);
 
-    if (file?.path && fs.existsSync(file.path)) {
-      fs.unlinkSync(file.path);
+      if (file?.path && fs.existsSync(file.path)) {
+        fs.unlinkSync(file.path);
+      }
+
+      return res.status(500).json({
+        success: false,
+        message: "Failed to process application",
+      });
     }
-  }
+  
 });
 
 
