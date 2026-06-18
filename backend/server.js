@@ -54,7 +54,7 @@ app.get("/test-email", async (req, res) => {
   try {
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "digambarareinforcement@gmail.com", // replace with your actual recipient
+      to: "aditisingh25000@gmail.com", // replace with your actual recipient
       subject: "Resend Test",
       html: "<h1>Resend is working!</h1>",
     });
