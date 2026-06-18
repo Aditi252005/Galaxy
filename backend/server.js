@@ -1,8 +1,10 @@
 const express = require("express");
-const nodemailer = require("nodemailer");
 const cors = require("cors");
 const multer = require("multer");
 const fs = require("fs");
+const { Resend } = require("resend");
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 const upload = multer({
   dest: "uploads/",
@@ -24,28 +26,48 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const transporter = nodemailer.createTransport({
-  host: "smtp.gmail.com",
-  port: 587,
-  secure: false,
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS,
-  },
-  tls: {
-    rejectUnauthorized: false,
-  },
-});
-transporter.verify((error, success) => {
-  if (error) {
-    console.error("SMTP Verify Error:", error);
-  } else {
-    console.log("SMTP Ready");
-  }
-});
+// const transporter = nodemailer.createTransport({
+//   host: "smtp.gmail.com",
+//   port: 587,
+//   secure: false,
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS,
+//   },
+//   tls: {
+//     rejectUnauthorized: false,
+//   },
+// });
+// transporter.verify((error, success) => {
+//   if (error) {
+//     console.error("SMTP Verify Error:", error);
+//   } else {
+//     console.log("SMTP Ready");
+//   }
+// });
 app.get("/", (req, res) => {
   res.send("Backend running...");
 });
+
+//testing email
+app.get("/test-email", async (req, res) => {
+  try {
+    const data = await resend.emails.send({
+      from: "onboarding@resend.dev",
+      to: "digambarareinforcement@gmail.com", // replace with your actual recipient
+      subject: "Resend Test",
+      html: "<h1>Resend is working!</h1>",
+    });
+
+    console.log(data);
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json(err);
+  }
+});
+
+
 
 // Enquiry route
 app.post("/send-enquiry", async (req, res) => {
