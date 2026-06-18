@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
@@ -19,7 +20,7 @@ const upload = multer({
     }
   }
 });
-require("dotenv").config();
+
 
 const app = express();
 
@@ -204,7 +205,7 @@ app.post("/apply", upload.single("resume"), async (req, res) => {
     // Email to Galaxy
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "aditisingh25000@gmail.com", // Change later
+      to: "digambarareinforcement@gmail.com", // Change later
 
       subject: `New Job Application - ${name}`,
 
