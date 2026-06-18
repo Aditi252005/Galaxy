@@ -23,7 +23,7 @@ export default function Footer() {
               <FaInstagram />
             </a>
             <a
-              href="https://wa.me/9993811711"
+              href="https://wa.me/919993811711"
               target="_blank"
               rel="noopener noreferrer"
             >
