@@ -30,7 +30,7 @@ Frontend
 
 • React Router
 
-• CSS3
+• CSS3,VITE
 
 
 Backend
