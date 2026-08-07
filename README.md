@@ -59,4 +59,3 @@ https://www.galaxywindowandmodulars.com
 • Implemented responsive layouts for desktop, tablet, and mobile devices.
 
 • Successfully deployed the application with a custom domain.
-Updated by Nitin
